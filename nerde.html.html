@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruhbanimnerde - Resmi Web Sitesi</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        
+        :root {
+            --primary-color: #1a1a2e;
+            --secondary-color: #612940;
+            --accent-color: #c9b037;
+            --light-accent: #f6eacf;
+            --light-color: #f8f9fa;
+            --dark-color: #0f0f1a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background-color: rgba(26, 26, 46, 0.95);
+            padding: 1rem 0;
+            transition: all 0.5s ease;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            font-family: 'Cinzel', serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--accent-color) !important;
+            letter-spacing: 2px;
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem !important;
+            margin: 0 0.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.8)), url('https://i.imgur.com/q4aTmQj.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 13rem 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--light-color);
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-title span {
+            color: var(--accent-color);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--light-color);
+            background: transparent;
+            border: 2px solid var(--accent-color);
+            border-radius: 50px;
+            transition: all 0.5s ease;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .hero-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+        }
+        
+        /* Başruhban Section */
+        .basruhban-section {
+            background-color: white;
+            padding: 6rem 0;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 800;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        
+        .section-description {
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        
+        .basruhban-img {
+            max-width: 300px;
+            border-radius: 50%;
+            border: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s ease;
+            margin-bottom: 1.5rem;
+        }
+        
+        .basruhban-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .basruhban-name {
+            font-size: 2.5rem;
+            margin: 1.5rem 0 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .basruhban-title {
+            color: var(--secondary-color);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .basruhban-social {
+            margin-bottom: 2rem;
+        }
+        
+        .basruhban-social a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            border-radius: 50%;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .basruhban-social a:hover {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+        }
+        
+        .basruhban-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+        
+        .basruhban-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .basruhban-card-header {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            padding: 1.5rem;
+        }
+        
+        .basruhban-card-title {
+            font-size: 1.8rem;
+            margin-bottom: 0;
+            color: var(--accent-color);
+        }
+        
+        .basruhban-card-body {
+            padding: 2rem;
+        }
+        
+        .basruhban-card-text {
+            text-align: justify;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        /* Quote Card */
+        .quote-card {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--light-color);
+            border-radius: 15px;
+            padding: 3rem;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            margin-top: 2rem;
+        }
+        
+        .quote-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            opacity: 0.5;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+        
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.5rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 1.5rem;
+        }
+        
+        .quote-author {
+            color: var(--accent-color);
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            text-align: right;
+            margin-top: 1.5rem;
+        }
+        
+        /* Hierarchy Section */
+        .hierarchy-section {
+            background-color: #f9f7f0;
+            padding: 6rem 0;
+        }
+        
+        .hierarchy-item {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--accent-color);
+            transition: all 0.5s ease;
+        }
+        
+        .hierarchy-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-left-color: var(--secondary-color);
+        }
+        
+        .hierarchy-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .hierarchy-rank {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background-color: var(--light-accent);
+            color: var(--primary-color);
+            border-radius: 50px;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hierarchy-icon {
+            float: right;
+            font-size: 2.5rem;
+            color: rgba(201, 176, 55, 0.2);
+        }
+        
+        .hierarchy-members {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed rgba(0, 0, 0, 0.1);
+        }
+        
+        .hierarchy-member {
+            display: inline-block;
+            margin-right: 1rem;
+            margin-bottom: 0.5rem;
+            background-color: var(--light-accent);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .hierarchy-member:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
+            color: var(--light-color);
+            padding: 5rem 0 2rem;
+        }
+        
+        .footer-logo {
+            font-family: 'Cinzel', serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        
+        .footer-text {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 300px;
+        }
+        
+        .footer-title {
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+        
+        .footer-contact-item {
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .footer-contact-icon {
+            display: inline-block;
+            width: 30px;
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .social-icons {
+            margin-top: 2rem;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: var(--light-color);
+            margin-right: 10px;
+            transition: all 0.5s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom-text {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+        
+        /* Modal Styles */
+        .modal-content {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .modal-header {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            border-bottom: none;
+            padding: 1.5rem;
+        }
+        
+        .modal-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+        
+        .btn-close {
+            color: white;
+            opacity: 1;
+        }
+        
+        .modal-body {
+            padding: 2rem;
+        }
+        
+        .form-label {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-select, .form-control {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            color: var(--primary-color);
+        }
+        
+        .modal-footer {
+            border-top: none;
+            padding: 1rem 2rem 2rem;
+        }
+        
+        .btn-modal {
+            padding: 0.75rem 2rem;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            border-radius: 50px;
+        }
+        
+        .btn-secondary {
+            background-color: #e6e0c5;
+            color: var(--primary-color);
+            border: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+        }
+        
+        /* Scroll Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+        
+        .scroll-top:hover {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+        }
+        
+        /* Media Queries */
+        @media (max-width: 991.98px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .basruhban-img {
+                max-width: 250px;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .quote-text {
+                font-size: 1.2rem;
+            }
+            
+            .basruhban-img {
+                max-width: 200px;
+            }
+        }
+        
+        @media (max-width: 575.98px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .quote-card {
+                padding: 2rem;
+            }
+            
+            .quote-text {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">RUHBANIMNERDE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#anasayfa">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#basruhban">Başruhban</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hiyerarsi">Hiyerarşi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#iletisim">İletişim</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="anasayfa">
+        <div class="container">
+            <h1 class="hero-title">RUHBANIM<span>NERDE</span></h1>
+            <p class="hero-subtitle">"Ruhani yolculuğunuzda sizlere rehberlik ediyor, manevi aydınlanmanıza ışık tutuyoruz."</p>
+            <div>
+                <a href="#basruhban" class="hero-btn">Başruhban'ı Tanıyın</a>
+                <a href="#" class="hero-btn" data-bs-toggle="modal" data-bs-target="#ruhbanModal">Ruhban Bul</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Başruhban Section -->
+    <section class="basruhban-section" id="basruhban">
+        <div class="container">
+            <p class="section-subtitle">Ruhani Liderlik</p>
+            <h2 class="section-title">BAŞRUHBAN</h2>
+            <p class="section-description">Ruhbanimnerde topluluğunun manevi lideri ve yol göstericisi, Yüksek Konsey'in başkanı.</p>
+            
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0 text-center">
+                    <img src="https://i.imgur.com/LK9pCBj.png" alt="Başruhban Ardo Şenyurt" class="img-fluid basruhban-img">
+                    <h3 class="basruhban-name">Ardo Şenyurt</h3>
+                    <p class="basruhban-title">Başruhban (2022 - Günümüz)</p>
+                    <div class="basruhban-social">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-8">
+                    <div class="basruhban-card">
+                        <div class="basruhban-card-header">
+                            <h4 class="basruhban-card-title">Başruhban'ın Biyografisi</h4>
+                        </div>
+                        <div class="basruhban-card-body">
+                            <p class="basruhban-card-text">Ardo Şenyurt, 1975 yılında Türkiye'nin Nevşehir ilinde dünyaya geldi. Çocukluğunu Kapadokya'nın mistik atmosferinde geçiren Şenyurt, küçük yaşlardan itibaren ruhani konulara ilgi duymaya başladı. Kapadokya'nın tarihi kiliselerinde ve manastırlarında geçirdiği zamanlar, onun ruhani yolculuğunun başlangıcını oluşturdu.</p>
+                            
+                            <p class="basruhban-card-text">1993 yılında İstanbul Üniversitesi İlahiyat Fakültesi'ni kazanan Şenyurt, buradaki eğitimini tamamladıktan sonra, Türkiye'nin çeşitli bölgelerinde ruhani çalışmalarına devam etti. 2001 yılında, yüksek lisans eğitimi için Oxford Üniversitesi'ne gitti ve burada "Mistik Geleneklerin Karşılaştırmalı Analizi" üzerine tezini tamamladı.</p>
+                            
+                            <p class="basruhban-card-text">2005 yılında Türkiye'ye dönen Şenyurt, ülkenin çeşitli bölgelerinde ruhani merkezler kurarak, toplumun her kesiminden insanlara ulaşmayı hedefledi. Özellikle gençler arasında ruhani değerlerin yayılması için çalışan Şenyurt, 2010 yılında "Ruhani Yolculuk" adlı kitabını yayınladı ve bu kitap kısa sürede manevi yaşam kategorisinde en çok satan eserler arasına girdi.</p>
+                            
+                            <p class="basruhban-card-text">2015 yılında, "Ruhbanimnerde" topluluğunun kurucu üyeleri arasında yer alan Şenyurt, topluluğun ilk yıllarında Ruhani İşler Koordinatörü olarak görev aldı. 2018'de Yüksek Konsey üyeliğine seçilen Şenyurt, 2022 yılında ise oybirliğiyle Başruhbanlık makamına getirildi.</p>
+                            
+                            <p class="basruhban-card-text">Başruhban Ardo Şenyurt, göreve geldiği günden bu yana, topluluk yapısını modernize etmek, dijital platformlarda varlık göstermek ve toplumun her kesimine ulaşmak için çeşitli projeler başlattı. Onun liderliğinde, Ruhbanimnerde topluluğu, Türkiye'nin en saygın ruhani toplulukları arasında yer almaya başladı.</p>
+                            
+                            <p class="basruhban-card-text">Şenyurt, beş dil bilen, dünya literatürüne hakim, modern ve geleneksel değerleri harmanlayan bir lider olarak tanınmaktadır. Evli ve iki çocuk babası olan Şenyurt, boş zamanlarında klasik müzik dinlemeyi ve doğa yürüyüşleri yapmayı sevmektedir.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="quote-card mt-4">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="quote-text">"Ruhani yolculuk, kendimizi bilmekle başlar, başkalarını anlamakla devam eder ve evrenle bir olmakla tamamlanır. Her birimiz bu yolculukta birer yolcuyuz ve birbirimize rehberlik etmekle yükümlüyüz. Ruhbanimnerde ailesinin amacı, bu yolculukta sizlere eşlik etmek ve ışığı birlikte taşımaktır."</p>
+                        <p class="quote-author">Ardo Şenyurt, Başruhban</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hiyerarşi Section -->
+    <section class="hierarchy-section" id="hiyerarsi">
+        <div class="container">
+            <p class="section-subtitle">Kurumsal Yapı</p>
+            <h2 class="section-title">RUHANİ HİYERARŞİ</h2>
+            <p class="section-description">Ruhbanimnerde topluluğunun manevi ve idari yapılanması, kadim gelenekleri modern çağa uyarlayan özgün bir sistem teşkil etmektedir.</p>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="hierarchy-item">
+                        <i class="fas fa-crown hierarchy-icon"></i>
+                        <h3 class="hierarchy-title">Yüksek Konsey</h3>
+                        <span class="hierarchy-rank">Ruhban Sıralaması: 1</span>
+                        <p>Başruhban'ın liderliğinde, topluluğun en üst düzey karar alma organıdır. Yedi üyeden oluşur ve stratejik kararları almakla yükümlüdür. Ayda bir kez Merkez Tapınak'ta toplanır.</p>
+                        <div class="hierarchy-members">
+                            <span class="hierarchy-member">Ardo Şenyurt (Başruhban)</span>
+                            <span class="hierarchy-member">Selin Akarsu (Baş Danışman)</span>
+                            <span class="hierarchy-member">Mehmet Yılmaz (İç İşleri)</span>
+                            <span class="hierarchy-member">Ayşe Kaya (Dış İlişkiler)</span>
+                            <span class="hierarchy-member">Kemal Öztürk (Eğitim)</span>
+                            <span class="hierarchy-member">Zeynep Aksoy (Araştırma)</span>
+                            <span class="hierarchy-member">Oğuz Demir (Mali İşler)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="hierarchy-item">
+                        <i class="fas fa-landmark hierarchy-icon"></i>
+                        <h3 class="hierarchy-title">Ruhani Meclis</h3>
+                        <span class="hierarchy-rank">Ruhban Sıralaması: 2</span>
+                        <p>Yüksek Konsey'in aldığı kararların uygulanmasını denetleyen ve bölgesel temsilcilerden oluşan meclistir. Toplam 21 üyesi bulunmaktadır. Üç ayda bir toplanır ve bölgesel raporları değerlendirir.</p>
+                        <div class="hierarchy-members">
+                            <span class="hierarchy-member">Selin Akarsu (Meclis Başkanı)</span>
+                            <span class="hierarchy-member">+ 20 Bölge Temsilcisi</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="hierarchy-item">
+                        <i class="fas fa-map-marked-alt hierarchy-icon"></i>
+                        <h3 class="hierarchy-title">Bölge Ruhbanları</h3>
+                        <span class="hierarchy-rank">Ruhban Sıralaması: 3</span>
+                        <p>Türkiye'nin yedi coğrafi bölgesinde görev yapan ve bölgesel faaliyetleri yürüten ruhbanlardır. Her bölge için bir lider ruhban ve dört yardımcı ruhban bulunur. Bölgesel tapınaklarda görev yaparlar.</p>
+                        <div class="hierarchy-members">
+                            <span class="hierarchy-member">Ahmet Yıldız (Marmara)</span>
+                            <span class="hierarchy-member">Deniz Kaya (Ege)</span>
+                            <span class="hierarchy-member">Ali Çelik (Akdeniz)</span>
+                            <span class="hierarchy-member">Hatice Öztürk (İç Anadolu)</span>
+                            <span class="hierarchy-member">Murat Demirci (Karadeniz)</span>
+                            <span class="hierarchy-member">Leyla Aydın (Doğu Anadolu)</span>
+                            <span class="hierarchy-member">Emre Koç (Güneydoğu)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="hierarchy-item">
+                        <i class="fas fa-city hierarchy-icon"></i>
+                        <h3 class="hierarchy-title">Şehir Temsilcileri</h3>
+                        <span class="hierarchy-rank">Ruhban Sıralaması: 4</span>
+                        <p>81 ilin her birinde görev yapan ve şehir içindeki faaliyetleri koordine eden ruhbanlardır. Yerel topluluklarla doğrudan iletişim halindedirler. Şehir merkezlerindeki ruhani merkezlerde hizmet verirler.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="hierarchy-item">
+                        <i class="fas fa-hands-helping hierarchy-icon"></i>
+                        <h3 class="hierarchy-title">Ruhani Danışmanlar</h3>
+                        <span class="hierarchy-rank">Ruhban Sıralaması: 5</span>
+                        <p>Topluluk üyelerine birebir ruhani danışmanlık hizmeti veren, meditasyon ve kişisel gelişim alanlarında uzmanlaşmış ruhbanlardır. En az beş yıllık ruhbanlık tecrübesine sahip olmaları gerekir.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="hierarchy-item">
+                        <i class="fas fa-user-graduate hierarchy-icon"></i>
+                        <h3 class="hierarchy-title">Çıraklar</h3>
+                        <span class="hierarchy-rank">Ruhban Sıralaması: 6</span>
+                        <p>Ruhbanlık eğitimi alan ve üst düzey ruhbanların gözetiminde çalışan adaylardır. En az üç yıllık eğitim sürecinden sonra ruhban olarak atanabilirler. Teorik eğitim ve uygulama aşamalarından geçerler.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="iletisim">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <div class="footer-logo">RUHBANIMNERDE</div>
+                    <p class="footer-text">Ruhani yolculuğunuzda sizlere rehberlik eden, manevi değerleri yaşatan ve toplumun her kesimine ulaşmayı hedefleyen kadim bir topluluk.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <h3 class="footer-title">HIZLI ERİŞİM</h3>
+                    <ul class="footer-links">
+                        <li><a href="#anasayfa">Ana Sayfa</a></li>
+                        <li><a href="#basruhban">Başruhban</a></li>
+                        <li><a href="#hiyerarsi">Hiyerarşi</a></li>
+                        <li><a href="#">Etkinlikler</a></li>
+                        <li><a href="#">Yayınlar</a></li>
+                        <li><a href="#">SSS</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <h3 class="footer-title">FAALİYETLER</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Meditasyon Seansları</a></li>
+                        <li><a href="#">Manevi Danışmanlık</a></li>
+                        <li><a href="#">Eğitim Programları</a></li>
+                        <li><a href="#">Topluluk Buluşmaları</a></li>
+                        <li><a href="#">Yardım Faaliyetleri</a></li>
+                        <li><a href="#">Kültürel Etkinlikler</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <h3 class="footer-title">İLETİŞİM</h3>
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                        Merkez: İstanbul, Beyoğlu Cad. No:123
+                    </div>
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon"><i class="fas fa-phone-alt"></i></span>
+                        +90 212 123 45 67
+                    </div>
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon"><i class="fas fa-envelope"></i></span>
+                        info@ruhbanimnerde.org
+                    </div>
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon"><i class="fas fa-clock"></i></span>
+                        Pazartesi - Cuma: 09:00 - 18:00
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-bottom-text">© 2025 Ruhbanimnerde. Tüm Hakları Saklıdır. | Site Tasarım: <a href="#" style="color: var(--accent-color);">Ruhbanimnerde Digital</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Ruhban Arama Modal -->
+    <div class="modal fade" id="ruhbanModal" tabindex="-1" aria-labelledby="ruhbanModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ruhbanModalLabel">Ruhban Ara</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="regionSelect" class="form-label">Bölge Seçiniz</label>
+                            <select class="form-select" id="regionSelect">
+                                <option selected>Bölge seçiniz...</option>
+                                <option value="marmara">Marmara</option>
+                                <option value="ege">Ege</option>
+                                <option value="akdeniz">Akdeniz</option>
+                                <option value="icanadolu">İç Anadolu</option>
+                                <option value="karadeniz">Karadeniz</option>
+                                <option value="doguanadolu">Doğu Anadolu</option>
+                                <option value="guneydoguanadolu">Güneydoğu Anadolu</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="citySelect" class="form-label">Şehir Seçiniz</label>
+                            <select class="form-select" id="citySelect" disabled>
+                                <option selected>Önce bölge seçiniz...</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="specialtySelect" class="form-label">Uzmanlık Alanı</label>
+                            <select class="form-select" id="specialtySelect">
+                                <option selected>Uzmanlık alanı seçiniz (opsiyonel)...</option>
+                                <option value="meditation">Meditasyon</option>
+                                <option value="spiritualcounseling">Ruhani Danışmanlık</option>
+                                <option value="healing">Şifa Teknikleri</option>
+                                <option value="energywork">Enerji Çalışmaları</option>
+                                <option value="mindfulness">Bilinçli Farkındalık</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                    <button type="button" class="btn btn-primary">Ara</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Cities by region
+        const cities = {
+            marmara: ["İstanbul", "Bursa", "Kocaeli", "Balıkesir", "Tekirdağ", "Edirne", "Kırklareli", "Çanakkale", "Yalova", "Sakarya", "Bilecik"],
+            ege: ["İzmir", "Aydın", "Muğla", "Manisa", "Denizli", "Uşak", "Kütahya", "Afyonkarahisar"],
+            akdeniz: ["Antalya", "Mersin", "Adana", "Hatay", "Burdur", "Isparta", "Osmaniye", "Kahramanmaraş"],
+            icanadolu: ["Ankara", "Konya", "Kayseri", "Eskişehir", "Sivas", "Kırıkkale", "Aksaray", "Karaman", "Kırşehir", "Nevşehir", "Niğde", "Yozgat"],
+            karadeniz: ["Samsun", "Trabzon", "Rize", "Ordu", "Giresun", "Amasya", "Artvin", "Bartın", "Bayburt", "Bolu", "Çorum", "Düzce", "Gümüşhane", "Karabük", "Kastamonu", "Sinop", "Tokat", "Zonguldak"],
+            doguanadolu: ["Erzurum", "Malatya", "Elazığ", "Van", "Ağrı", "Ardahan", "Bingöl", "Bitlis", "Erzincan", "Hakkari", "Iğdır", "Kars", "Muş", "Tunceli"],
+            guneydoguanadolu: ["Gaziantep", "Diyarbakır", "Şanlıurfa", "Mardin", "Batman", "Adıyaman", "Siirt", "Şırnak", "Kilis"]
+        };
+
+        // Enable city selection based on region
+        document.getElementById('regionSelect').addEventListener('change', function() {
+            const regionCities = cities[this.value];
+            const citySelect = document.getElementById('citySelect');
+            
+            if (regionCities) {
+                citySelect.innerHTML = '<option selected>Şehir seçiniz...</option>';
+                regionCities.forEach(city => {
+                    const option = document.createElement('option');
+                    option.value = city.toLowerCase();
+                    option.textContent = city;
+                    citySelect.appendChild(option);
+                });
+                citySelect.disabled = false;
+            } else {
+                citySelect.innerHTML = '<option selected>Önce bölge seçiniz...</option>';
+                citySelect.disabled = true;
+            }
+        });
+
+        // Scroll to top functionality
+        window.addEventListener('scroll', function() {
+            const scrollTopBtn = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.style.display = 'block';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        });
+
+        document.getElementById('scrollTop').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Update active navigation link on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                
+                if (window.pageYOffset >= sectionTop - navbarHeight - 50) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
